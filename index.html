@@ -1,195 +1,138 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Origuri | Indie Game Studio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Outfit', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            dark: '#0B0C10',
-                            card: '#1F2833',
-                            cyan: '#66FCF1',
-                            teal: '#45A29E',
-                            purple: '#8A2BE2'
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body {
-            background-color: #0B0C10;
-            color: #ffffff;
-        }
-        .gradient-text {
-            background: linear-gradient(to right, #66FCF1, #8A2BE2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .game-card {
-            transition: all 0.3s ease;
-        }
-        .game-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 30px -10px rgba(102, 252, 241, 0.5);
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f5f2eb">
+<title>Frank — Game Designer</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&family=Kalam:wght@400;700&display=swap');
+:root{--paper:#f5f2eb;--ink:#20211f;--muted:#77786f;--line:#d8d5cc;--lime:#d6f36a;--blue:#c8dcff;--pink:#ffd2c8;--lav:#dcd3ff;--mono:'DM Mono',monospace;--sans:'Space Grotesk',sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button{font:inherit;color:inherit}.wrap{width:min(1180px,calc(100% - 48px));margin:auto}.topbar{display:flex;justify-content:space-between;align-items:center;padding:25px 0;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:12px}.brand{font-family:var(--sans);font-size:19px;font-weight:700;letter-spacing:-.06em}.nav{display:flex;gap:27px}.nav a{color:var(--muted);transition:color .2s}.nav a:hover{color:var(--ink)}.status{display:flex;gap:8px;align-items:center}.dot{width:7px;height:7px;border-radius:50%;background:#6baf47;display:inline-block;box-shadow:0 0 0 4px #6baf471b}
+.hero{padding:100px 0 64px;position:relative;overflow:hidden}.eyebrow,.section-kicker{font:11px var(--mono);text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}h1{font-size:clamp(54px,9vw,118px);line-height:.91;letter-spacing:-.085em;margin:24px 0 28px;max-width:950px;font-weight:600}h1 .accent{color:#818d43}.hero-bottom{display:flex;align-items:end;justify-content:space-between;gap:28px}.intro{max-width:510px;font-size:18px;line-height:1.6;color:#575850}.actions{display:flex;gap:10px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;gap:20px;padding:14px 17px;border:1px solid var(--ink);border-radius:3px;font:12px var(--mono);transition:transform .2s,background .2s}.btn:hover{transform:translateY(-3px);background:var(--lime)}.btn.dark{background:var(--ink);color:var(--paper)}.btn.dark:hover{background:#42443b}.orbit{position:absolute;right:6%;top:65px;width:110px;height:110px;border:1px solid #b8b5aa;border-radius:50%;display:grid;place-items:center;transform:rotate(-14deg);font:10px var(--mono);text-align:center;line-height:1.5}.orbit:before{content:"";position:absolute;width:130px;height:40px;border:1px solid #b8b5aa;border-radius:50%;transform:rotate(55deg)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:8px 0 95px}.stat{padding:23px 24px 25px 0;border-right:1px solid var(--line)}.stat:not(:first-child){padding-left:24px}.stat:last-child{border:0}.stat strong{display:block;font-size:36px;letter-spacing:-.06em}.stat span{font:11px var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+section{padding:0 0 105px}.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:28px;gap:20px}.section-head h2{font-size:clamp(32px,5vw,55px);letter-spacing:-.07em;margin:9px 0 0;font-weight:600}.section-note{font-size:13px;color:var(--muted);max-width:300px;line-height:1.6}
+.featured{display:grid;grid-template-columns:1fr 1fr;gap:16px}.project{border:1px solid var(--line);border-radius:5px;overflow:hidden;transition:transform .25s,box-shadow .25s;background:#fbf9f4}.project:hover{transform:translateY(-5px);box-shadow:0 12px 30px #24251b0b}.project-art{aspect-ratio:1.5;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}.art-a{background:var(--lime)}.art-b{background:var(--blue)}.art-c{background:var(--pink)}.art-d{background:var(--lav)}.art-label{position:absolute;left:16px;top:16px;font:10px var(--mono);text-transform:uppercase;letter-spacing:.1em}.shape{width:160px;height:160px;border:2px solid var(--ink);border-radius:28px;display:grid;place-items:center;transform:rotate(-8deg);background:#ffffff35;box-shadow:12px 12px 0 #20211f16}.shape span{font-size:62px;font-weight:700;letter-spacing:-.1em}.shape.circle{border-radius:50%;transform:rotate(10deg);width:180px;height:180px}.shape.stack{border-radius:8px;transform:rotate(5deg);width:190px;height:130px}.shape.stack span{font-size:44px}.project-meta{padding:20px 21px 22px}.project-top{display:flex;justify-content:space-between;gap:10px;font:10px var(--mono);text-transform:uppercase;color:var(--muted)}.project h3{font-size:26px;letter-spacing:-.05em;margin:12px 0 7px}.project p{font-size:13px;line-height:1.6;color:var(--muted);max-width:450px;margin:0}.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:17px}.tag{border:1px solid var(--line);border-radius:2px;padding:5px 7px;font:9px var(--mono);text-transform:uppercase}
+.filters{display:flex;gap:7px;flex-wrap:wrap;margin:24px 0}.filter{padding:8px 12px;border:1px solid var(--line);background:transparent;border-radius:3px;font:10px var(--mono);cursor:pointer}.filter.active,.filter:hover{background:var(--ink);border-color:var(--ink);color:var(--paper)}.library{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.tile{border:1px solid var(--line);padding:16px;border-radius:4px;min-height:180px;display:flex;flex-direction:column;justify-content:space-between;background:#fbf9f4;transition:background .2s,transform .2s}.tile:hover{background:var(--lime);transform:translateY(-3px)}.tile-top{display:flex;justify-content:space-between;font:10px var(--mono);color:var(--muted)}.tile h3{font-size:21px;letter-spacing:-.05em;margin:20px 0 5px}.tile p{font-size:12px;line-height:1.5;color:var(--muted);margin:0}.tile-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:20px;font:10px var(--mono);text-transform:uppercase}
+.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}.about-stamp{background:var(--pink);aspect-ratio:1;display:grid;place-items:center;border-radius:3px;position:relative;overflow:hidden}.about-stamp .bigf{font-size:clamp(100px,17vw,220px);font-weight:700;letter-spacing:-.15em;transform:rotate(-10deg)}.about-stamp:after{content:"GAME DESIGN / INDONESIA";position:absolute;bottom:17px;left:17px;font:10px var(--mono);letter-spacing:.12em}.about-copy h2{font-size:clamp(36px,5vw,58px);line-height:1;letter-spacing:-.07em;margin:10px 0 24px}.about-copy p{font-size:15px;line-height:1.8;color:#5d5e56;max-width:620px}.skill-groups{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:35px;border-top:1px solid var(--line);padding-top:22px}.skill-groups h3{font:11px var(--mono);text-transform:uppercase;color:var(--muted);font-weight:400}.skill-groups p{font-size:13px;line-height:1.9;color:var(--ink);margin:10px 0}
+.contact{padding:60px 0 50px;border-top:1px solid var(--line)}.contact h2{font-size:clamp(45px,8vw,92px);line-height:.95;letter-spacing:-.08em;max-width:850px;margin:20px 0 35px}.contact-row{display:flex;justify-content:space-between;gap:25px;align-items:end}.contact-row p{max-width:390px;color:var(--muted);line-height:1.7;font-size:14px}.footer{display:flex;justify-content:space-between;gap:20px;padding:22px 0 30px;border-top:1px solid var(--line);font:10px var(--mono);color:var(--muted)}.footer-links{display:flex;gap:20px}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}.reveal.visible{opacity:1;transform:none}
+@media(max-width:720px){.wrap{width:min(100% - 32px,1180px)}.nav{gap:13px}.nav a:nth-child(2){display:none}.status{display:none}.hero{padding:75px 0 45px}.orbit{width:70px;height:70px;right:4%;top:28px;font-size:8px}.orbit:before{width:82px;height:25px}h1{font-size:clamp(53px,15vw,86px);margin-top:38px}.hero-bottom,.section-head,.contact-row{align-items:flex-start;flex-direction:column}.intro{font-size:16px}.stats{margin-bottom:70px}.stat{padding:18px 8px 18px 0}.stat:not(:first-child){padding-left:12px}.stat strong{font-size:27px}.stat span{font-size:8px}.featured{grid-template-columns:1fr}.library{grid-template-columns:1fr 1fr}.tile{min-height:165px;padding:12px}.tile h3{font-size:18px}.about-grid{grid-template-columns:1fr;gap:30px}.about-stamp{max-width:360px}.skill-groups{gap:15px}section{padding-bottom:75px}.footer{flex-direction:column}.project-art{aspect-ratio:1.45}}
+@media(max-width:430px){.library{grid-template-columns:1fr}.tile{min-height:145px}.nav{font-size:10px;gap:10px}.brand{font-size:17px}.skill-groups{grid-template-columns:1fr}}
+
+/* MODERN DOODLE THEME */
+:root{--paper:#fffdf7;--ink:#25251f;--muted:#77766e;--line:#d9d6cc;--lime:#d9f879;--blue:#cce5ff;--pink:#ffd4c9;--lav:#e0d7ff;--sans:'Space Grotesk',sans-serif;--hand:'Kalam',cursive}
+body{background-color:var(--paper);background-image:radial-gradient(#d9d6cc 0.65px,transparent .65px);background-size:18px 18px}
+.topbar{border-bottom:1.5px solid var(--ink)}
+.brand{font-size:21px;letter-spacing:-.08em;position:relative}.brand:after{content:'✳';font:18px var(--hand);position:absolute;right:-17px;top:-9px;transform:rotate(15deg)}
+.nav a{position:relative}.nav a:hover:after{content:'';position:absolute;left:0;right:0;bottom:-5px;height:4px;border-bottom:2px solid var(--ink);border-radius:50%;transform:rotate(-2deg)}
+.hero{overflow:visible}.hero:before{content:'✳';position:absolute;left:-24px;top:145px;font:42px var(--hand);transform:rotate(-14deg);color:#f08b73;z-index:1}.hero:after{content:'hi!';position:absolute;right:15%;top:208px;font:24px var(--hand);transform:rotate(9deg);color:#6b7c38}
+h1{letter-spacing:-.08em}h1 .accent{color:#647b29;position:relative;white-space:nowrap}h1 .accent:after{content:'';position:absolute;left:0;right:-3px;bottom:-8px;height:10px;border-bottom:4px solid #f08b73;border-radius:48%;transform:rotate(-2deg)}
+.eyebrow:before{content:'↗ ';font:18px var(--hand);color:#ed8b73}.orbit{border:2px solid var(--ink);border-radius:44% 56% 49% 51% / 53% 45% 55% 47%;background:var(--lime);font:12px var(--hand);font-weight:700;transform:rotate(8deg)}.orbit:before{border:1.5px solid var(--ink);border-radius:50% 42% 54% 46%;transform:rotate(52deg)}
+.btn{border:1.5px solid var(--ink);border-radius:8px 5px 9px 4px;box-shadow:3px 3px 0 var(--ink);font-family:var(--mono)}.btn:hover{box-shadow:1px 1px 0 var(--ink);transform:translate(2px,2px)}.btn.dark{background:var(--lime);color:var(--ink)}.btn.dark:hover{background:var(--pink)}
+.stats{border-top:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink)}.stat{border-right:1.5px dashed #aaa69b}.stat strong{position:relative;display:inline-block}.stat:nth-child(1) strong:after{content:'✦';font:18px var(--hand);position:absolute;right:-19px;top:-3px;color:#ed8b73}
+.section-kicker{font-family:var(--mono)}.section-head h2{position:relative;display:inline-block}.section-head h2:after{content:'〰';font:30px var(--hand);position:absolute;right:-40px;bottom:-12px;color:#ee927b;transform:rotate(-9deg)}
+.project{border:1.5px solid var(--ink);border-radius:9px 6px 11px 7px;box-shadow:4px 4px 0 var(--ink);background:#fffef9}.project-art{border-bottom:1.5px solid var(--ink)}.art-a{background:#dafa80}.art-b{background:#cde6ff}.art-c{background:#ffd5ca}.art-d{background:#e2d8ff}.art-label{background:#fffdf7;border:1.5px solid var(--ink);padding:5px 7px;border-radius:4px 8px 5px 7px;transform:rotate(-2deg)}.shape{border:2px solid var(--ink);border-radius:32% 27% 34% 25% / 27% 33% 25% 34%;background:#fffdf780;box-shadow:7px 7px 0 #25251f20;position:relative}.shape:after{content:'✳';position:absolute;right:-23px;top:-22px;font:35px var(--hand);color:#ed8b73;transform:rotate(12deg)}.shape.circle{border-radius:48% 52% 44% 56% / 52% 43% 57% 48%}.shape.stack{border-radius:7px 13px 5px 11px}
+.project-meta{position:relative}.project h3{letter-spacing:-.06em}.tag{border:1.5px solid var(--ink);border-radius:6px 3px 7px 4px;background:#fffdf7}.project:hover{box-shadow:6px 7px 0 var(--ink)}
+.filter{border:1.5px solid var(--ink);border-radius:7px 4px 8px 5px}.filter.active,.filter:hover{background:var(--lime);color:var(--ink);border-color:var(--ink);box-shadow:2px 2px 0 var(--ink)}.tile{border:1.5px solid var(--ink);border-radius:8px 5px 10px 6px;box-shadow:3px 3px 0 var(--ink);background:#fffef9}.tile:hover{background:var(--lime);box-shadow:1px 1px 0 var(--ink)}.tile h3{letter-spacing:-.06em}.tile-bottom span:last-child{font-size:17px}
+.about-stamp{border:1.5px solid var(--ink);border-radius:12px 7px 14px 9px;background:#ffd5ca}.about-stamp:before{content:'✦';position:absolute;top:12%;right:14%;font:42px var(--hand);transform:rotate(15deg)}.about-stamp .bigf{font-family:var(--hand);font-size:clamp(140px,18vw,230px);text-shadow:5px 5px 0 #fffdf7;letter-spacing:-.12em}.about-copy h2{position:relative}.about-copy h2:after{content:'good games = good feelings';display:block;font:17px var(--hand);letter-spacing:0;color:#6b7c38;margin-top:13px;transform:rotate(-2deg)}
+.contact{border-top:1.5px solid var(--ink);position:relative}.contact:after{content:'✳';position:absolute;right:5%;top:40px;font:55px var(--hand);color:#ed8b73;transform:rotate(15deg)}.contact h2{max-width:900px}.contact h2:after{content:' ';display:block;width:210px;height:12px;border-bottom:4px solid #d8ef79;border-radius:50%;transform:rotate(-2deg)}.footer{border-top:1.5px solid var(--ink)}
+@media(max-width:720px){.hero:before{left:-7px;top:110px;font-size:29px}.hero:after{right:15%;top:165px;font-size:18px}.orbit{background:var(--lime)}.section-head h2:after{right:-22px;font-size:21px}.contact:after{right:2%;font-size:34px;top:22px}}
+
+
+.edit-dock{position:fixed;z-index:1000;right:18px;bottom:18px;display:flex;align-items:center;gap:8px;padding:9px;background:#20211f;color:#f5f2eb;border:2px solid #20211f;box-shadow:4px 4px 0 #d6f36a;font:10px var(--mono)}.edit-dock span{padding:0 6px}.edit-dock button{border:1px solid #f5f2eb;background:transparent;color:#f5f2eb;padding:9px 11px;font:10px var(--mono);cursor:pointer}.edit-dock button:hover{background:#d6f36a;color:#20211f}.edit-dock button[hidden]{display:none}[contenteditable="true"]{outline:2px dashed #8da83b;outline-offset:3px;cursor:text}.edit-dock.editing{background:#d6f36a;color:#20211f;border-color:#20211f}.edit-dock.editing button{border-color:#20211f;color:#20211f}.edit-dock.editing button:hover{background:#20211f;color:#f5f2eb}
+@media(max-width:520px){.edit-dock{right:10px;bottom:10px;left:10px;justify-content:center}.edit-dock span{display:none}}
+</style>
 </head>
-<body class="font-sans antialiased selection:bg-brand-cyan selection:text-brand-dark">
-
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 top-0 bg-brand-dark/90 backdrop-blur-md border-b border-gray-800">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-4 flex justify-between items-center">
-            <a href="#" class="text-3xl font-extrabold tracking-tight text-white flex items-center gap-2">
-                <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-cyan to-brand-purple flex items-center justify-center text-brand-dark text-xl">O</span>
-                Origuri
-            </a>
-            <div class="hidden md:flex gap-8 font-semibold text-gray-300">
-                <a href="#games" class="hover:text-brand-cyan transition-colors">Games</a>
-                <a href="#about" class="hover:text-brand-cyan transition-colors">Studio</a>
-                <a href="#contact" class="hover:text-brand-cyan transition-colors">Contact</a>
-            </div>
-            <a href="#games" class="hidden md:block bg-brand-cyan text-brand-dark px-6 py-2 rounded-full font-bold hover:bg-white transition-colors shadow-[0_0_15px_rgba(102,252,241,0.4)]">
-                Play Now
-            </a>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="pt-32 pb-20 lg:pt-48 lg:pb-32 px-6 text-center flex flex-col items-center justify-center min-h-screen">
-        <div class="inline-block px-4 py-1.5 rounded-full border border-brand-purple/30 bg-brand-purple/10 text-brand-purple font-semibold text-sm mb-6">
-            👾 New release: Merge & Conquer is out now!
-        </div>
-        <h1 class="text-5xl lg:text-7xl font-extrabold tracking-tight max-w-4xl leading-tight mb-6">
-            Master the loop. <br>
-            <span class="gradient-text">Crafting pure fun.</span>
-        </h1>
-        <p class="text-xl text-gray-400 max-w-2xl mx-auto mb-10">
-            We are an indie game studio building hybrid-casual games that combine simple mechanics with deep, satisfying progression. Easy to pick up, impossible to put down.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4">
-            <a href="#games" class="bg-gradient-to-r from-brand-cyan to-brand-purple text-white px-8 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-lg">
-                Explore Our Games
-            </a>
-        </div>
-    </section>
-
-    <!-- Games Section -->
-    <section id="games" class="py-24 bg-brand-card/30 border-y border-gray-800">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-extrabold mb-4">Our <span class="gradient-text">Titles</span></h2>
-                <p class="text-gray-400">Addictive core loops with a touch of indie charm.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Game 1 -->
-                <div class="game-card bg-brand-card rounded-3xl overflow-hidden border border-gray-700">
-                    <div class="h-48 bg-gray-800 relative">
-                        <!-- Placeholder for game art -->
-                        <div class="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-brand-cyan/20 flex items-center justify-center">
-                            <span class="text-4xl">⚔️</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-center mb-3">
-                            <h3 class="text-2xl font-bold text-white">Merge & Conquer</h3>
-                            <span class="bg-brand-cyan/20 text-brand-cyan text-xs font-bold px-2 py-1 rounded">Action / Merge</span>
-                        </div>
-                        <p class="text-gray-400 mb-6 text-sm">Combine your units, build your army, and conquer the rogue-like dungeons. Fast-paced hybrid action.</p>
-                        <button class="w-full bg-gray-700 hover:bg-brand-cyan hover:text-brand-dark text-white font-bold py-3 rounded-xl transition-colors">
-                            Download iOS / Android
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Game 2 -->
-                <div class="game-card bg-brand-card rounded-3xl overflow-hidden border border-gray-700">
-                    <div class="h-48 bg-gray-800 relative">
-                        <div class="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center">
-                            <span class="text-4xl">🏃‍♂️</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-center mb-3">
-                            <h3 class="text-2xl font-bold text-white">Neon Rush Idle</h3>
-                            <span class="bg-brand-purple/20 text-brand-purple text-xs font-bold px-2 py-1 rounded">Idle / Runner</span>
-                        </div>
-                        <p class="text-gray-400 mb-6 text-sm">Swipe to dodge, tap to upgrade. Build your neon empire while you sleep in this idle-runner mashup.</p>
-                        <button class="w-full bg-gray-700 hover:bg-brand-cyan hover:text-brand-dark text-white font-bold py-3 rounded-xl transition-colors">
-                            Download iOS / Android
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Game 3 (Coming Soon) -->
-                <div class="game-card bg-brand-card rounded-3xl overflow-hidden border border-dashed border-gray-600 opacity-70">
-                    <div class="h-48 bg-gray-900 relative flex items-center justify-center">
-                        <span class="text-gray-500 font-bold tracking-widest uppercase">In Development</span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-gray-300 mb-2">Project: Orbit</h3>
-                        <p class="text-gray-500 mb-6 text-sm">A relaxing yet challenging physics-based puzzle game. Join our Discord to play the alpha.</p>
-                        <button class="w-full border border-gray-600 hover:border-brand-purple text-gray-300 font-bold py-3 rounded-xl transition-colors">
-                            Join Discord
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-24 px-6">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-4xl font-extrabold mb-8">The <span class="gradient-text">Origuri</span> Team</h2>
-            <p class="text-lg text-gray-300 leading-relaxed mb-8">
-                Started in 2023 by two friends who loved hyper-casual simplicity but craved deep progression. 
-                We are a small, independent studio focused on rapid prototyping and player-first design. 
-                We don't just make games; we iterate until the loop is perfect.
-            </p>
-            <div class="flex flex-wrap justify-center gap-4 text-sm font-bold text-gray-400">
-                <div class="bg-brand-card px-4 py-2 rounded-full border border-gray-800">Data-Driven Design</div>
-                <div class="bg-brand-card px-4 py-2 rounded-full border border-gray-800">Indie Spirit</div>
-                <div class="bg-brand-card px-4 py-2 rounded-full border border-gray-800">Player First</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer / Contact -->
-    <footer id="contact" class="bg-black py-12 border-t border-gray-900 text-center">
-        <div class="max-w-7xl mx-auto px-6">
-            <h3 class="text-2xl font-bold text-white mb-6">Let's build something fun.</h3>
-            <p class="text-gray-500 mb-8">Publishers, press, or players — drop us a line at <a href="mailto:hello@origuri.com" class="text-brand-cyan hover:underline">hello@origuri.com</a></p>
-            
-            <div class="flex justify-center gap-6 mb-12">
-                <a href="#" class="w-12 h-12 rounded-full bg-brand-card flex items-center justify-center hover:bg-brand-cyan hover:text-brand-dark transition-colors">
-                    <span class="sr-only">Twitter</span>
-                    𝕏
-                </a>
-                <a href="#" class="w-12 h-12 rounded-full bg-brand-card flex items-center justify-center hover:bg-brand-purple hover:text-white transition-colors">
-                    <span class="sr-only">Discord</span>
-                    💬
-                </a>
-                <a href="#" class="w-12 h-12 rounded-full bg-brand-card flex items-center justify-center hover:bg-white hover:text-black transition-colors">
-                    <span class="sr-only">GitHub</span>
-                    💻
-                </a>
-            </div>
-            
-            <p class="text-gray-700 text-sm">© 2026 Origuri Game Studio. All rights reserved.</p>
-        </div>
-    </footer>
-
+<body>
+<header class="wrap topbar">
+  <a class="brand" href="#home">FRANK<span style="color:#818d43">.</span></a>
+  <nav class="nav"><a href="#work">Work ↘</a><a href="#about">About</a><a href="#contact">Contact ↗</a></nav>
+  <div class="status"><span class="dot"></span> GAME DESIGNER</div>
+</header>
+<main>
+<section class="wrap hero" id="home">
+  <div class="eyebrow">Game Designer · Indonesia</div>
+  <div class="orbit">MAKE IT<br>PLAYABLE ↗</div>
+  <h1>I design games<br>people <span class="accent">want to play.</span></h1>
+  <div class="hero-bottom">
+    <p class="intro">I turn ideas into games.</p>
+    <div class="actions"><a class="btn dark" href="#work">VIEW WORK <span>↘</span></a><a class="btn" href="#contact">CONTACT <span>↗</span></a></div>
+  </div>
+</section>
+<div class="wrap stats reveal">
+  <div class="stat"><strong>3+ yrs</strong><span>Years designing games</span></div>
+  <div class="stat"><strong>5+</strong><span>Projects</span></div>
+  <div class="stat"><strong>20K+</strong><span>Players reached</span></div>
+</div>
+<section class="wrap reveal" id="work">
+  <div class="section-head"><div><div class="section-kicker">01 / Selected work</div><h2>Selected work.</h2></div><p class="section-note">Games, systems, and prototypes.</p></div>
+  <div class="featured">
+    <article class="project">
+      <div class="project-art art-a"><span class="art-label">01 / Multiplayer</span><div class="shape"><span>AYO!</span></div></div>
+      <div class="project-meta"><div class="project-top"><span>Game Design · Multiplayer</span><span>2024—26</span></div><h3>AyoMain</h3><p>Local multiplayer games for instant, shared fun.</p><div class="tags"><span class="tag">Core Loop</span><span class="tag">Game Design</span><span class="tag">Live Product</span></div></div>
+    </article>
+    <article class="project">
+      <div class="project-art art-b"><span class="art-label">02 / Action</span><div class="shape circle"><span>ARUFA</span></div></div>
+      <div class="project-meta"><div class="project-top"><span>Combat Design · Action</span><span>2025—26</span></div><h3>Arufa: The Blade of Fate</h3><p>Action combat with Indonesian roots.</p><div class="tags"><span class="tag">Combat</span><span class="tag">Systems</span><span class="tag">Worldbuilding</span></div></div>
+    </article>
+    <article class="project">
+      <div class="project-art art-c"><span class="art-label">03 / Casual</span><div class="shape stack"><span>SAND<br>CLAW</span></div></div>
+      <div class="project-meta"><div class="project-top"><span>Systems Design · Casual</span><span>2026</span></div><h3>Sand Claw Conveyor</h3><p>A sand puzzle built around tactile interactions.</p><div class="tags"><span class="tag">Puzzle Design</span><span class="tag">Level Design</span><span class="tag">Prototype</span></div></div>
+    </article>
+    <article class="project">
+      <div class="project-art art-d"><span class="art-label">04 / Simulation</span><div class="shape"><span>AV</span></div></div>
+      <div class="project-meta"><div class="project-top"><span>Economy Design · Idle</span><span>2026</span></div><h3>Animal Venture</h3><p>An idle game about upgrades and growing animal attractions.</p><div class="tags"><span class="tag">Economy</span><span class="tag">Progression</span><span class="tag">Balancing</span></div></div>
+    </article>
+  </div>
+</section>
+<section class="wrap reveal" id="library">
+  <div class="section-head"><div><div class="section-kicker">02 / Project archive</div><h2>More work.</h2></div><p class="section-note">Filter by type.</p></div>
+  <div class="filters" role="group" aria-label="Filter projects">
+    <button class="filter active" data-filter="all">All work</button><button class="filter" data-filter="design">Game design</button><button class="filter" data-filter="prototype">Prototypes</button><button class="filter" data-filter="systems">Systems</button>
+  </div>
+  <div class="library" id="projectLibrary">
+    <article class="tile" data-category="design"><div class="tile-top"><span>GD / 01</span><span>Multiplayer</span></div><div><h3>AyoMain Minigames</h3><p>Social party-game loops and onboarding.</p></div><div class="tile-bottom"><span>Game design</span><span>↗</span></div></article>
+    <article class="tile" data-category="prototype"><div class="tile-top"><span>PT / 02</span><span>Casual</span></div><div><h3>Sand Claw</h3><p>Material interactions and puzzle variations.</p></div><div class="tile-bottom"><span>Prototype</span><span>↗</span></div></article>
+    <article class="tile" data-category="systems"><div class="tile-top"><span>SY / 03</span><span>Idle</span></div><div><h3>Animal Venture</h3><p>Upgrade costs, station pacing, and expansion.</p></div><div class="tile-bottom"><span>Systems</span><span>↗</span></div></article>
+    <article class="tile" data-category="design"><div class="tile-top"><span>GD / 04</span><span>Action</span></div><div><h3>Arufa</h3><p>Combat readability and encounter design.</p></div><div class="tile-bottom"><span>Game design</span><span>↗</span></div></article>
+    <article class="tile" data-category="prototype"><div class="tile-top"><span>PT / 05</span><span>Arcade</span></div><div><h3>Idle Dot Shooter</h3><p>Turret progression and upgrade choices.</p></div><div class="tile-bottom"><span>Prototype</span><span>↗</span></div></article>
+    <article class="tile" data-category="systems"><div class="tile-top"><span>SY / 06</span><span>Progression</span></div><div><h3>Level Design Studies</h3><p>Difficulty curves, teaching beats, and pacing.</p></div><div class="tile-bottom"><span>Systems</span><span>↗</span></div></article>
+  </div>
+</section>
+<section class="wrap reveal" id="about">
+  <div class="section-head"><div><div class="section-kicker">03 / About me</div><h2>How I design.</h2></div></div>
+  <div class="about-grid">
+    <div class="about-stamp"><div class="bigf">F.</div></div>
+    <div class="about-copy"><div class="section-kicker">Game designer / Indonesia</div><h2>Ideas into playable games.</h2><p>I focus on core loops, mechanics, progression, and level design.</p><p>I study references, prototype fast, test, and iterate.</p>
+      <div class="skill-groups"><div><h3>Design practice</h3><p>Core loops<br>Game mechanics<br>Level design<br>Progression & economy<br>Balancing & documentation</p></div><div><h3>Tools & workflow</h3><p>Unity<br>Rapid prototyping<br>Figma<br>AI-assisted workflows<br>Cross-discipline collaboration</p></div></div>
+    </div>
+  </div>
+</section>
+<section class="wrap contact reveal" id="contact">
+  <div class="section-kicker">04 / Next project?</div><h2>Let's make games.</h2>
+  <div class="contact-row"><p>Have a game idea? Let's talk.</p><div class="actions"><a class="btn dark" href="mailto:YOUR_EMAIL@example.com">EMAIL ↗</a><a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LINKEDIN ↗</a></div></div>
+</section>
+</main>
+<div class="edit-dock" id="editDock"><span id="editHint">Want to change the words?</span><button id="editToggle" type="button">EDIT TEXT</button><button id="saveText" type="button" hidden>SAVE</button><button id="resetText" type="button" hidden>RESET</button></div>
+<footer class="wrap footer"><span>© 2026 FRANK / GAME DESIGNER</span><div class="footer-links"><a href="#home">TOP ↑</a><a href="#work">WORK</a></div></footer>
+<script>
+const filters=[...document.querySelectorAll('.filter')];
+const tiles=[...document.querySelectorAll('.tile')];
+filters.forEach(btn=>btn.addEventListener('click',()=>{filters.forEach(b=>b.classList.remove('active'));btn.classList.add('active');const f=btn.dataset.filter;tiles.forEach(tile=>tile.hidden=!(f==='all'||tile.dataset.category===f));}));
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+// Click EDIT TEXT, then click any highlighted text to replace it. Changes stay in this browser.
+const editDock=document.getElementById('editDock'), editToggle=document.getElementById('editToggle'), saveText=document.getElementById('saveText'), resetText=document.getElementById('resetText');
+const editableSelector='header .brand, header .nav a, header .status, .hero .eyebrow, .orbit, h1, .intro, .hero .actions a, .stat strong, .stat span, .section-kicker, .section-head h2, .section-note, .project-art .art-label, .project-top span, .project h3, .project p, .tag, .filter, .tile-top span, .tile h3, .tile p, .tile-bottom span, .about-copy h2, .about-copy p, .skill-groups h3, .contact h2, .contact-row p, .contact-row .btn, .footer span, .footer-links a';
+const editable=[...document.querySelectorAll(editableSelector)].filter((el,i,arr)=>!arr.some(other=>other!==el&&other.contains(el)&&other.matches(editableSelector)));
+const storageKey='frank-portfolio-text-v1';
+function loadText(){try{const saved=JSON.parse(localStorage.getItem(storageKey)||'{}');editable.forEach((el,i)=>{if(saved[i]!==undefined)el.innerHTML=saved[i]})}catch(e){}}
+function setEditMode(on){document.body.classList.toggle('text-editing',on);editable.forEach(el=>{el.contentEditable=on?'true':'false'});editDock.classList.toggle('editing',on);editToggle.textContent=on?'DONE':'EDIT TEXT';saveText.hidden=!on;resetText.hidden=!on;document.getElementById('editHint').textContent=on?'Click highlighted text to edit':'Want to change the words?';}
+loadText();
+editToggle.addEventListener('click',()=>setEditMode(!document.body.classList.contains('text-editing')));
+saveText.addEventListener('click',()=>{const saved={};editable.forEach((el,i)=>saved[i]=el.innerHTML);localStorage.setItem(storageKey,JSON.stringify(saved));setEditMode(false);document.getElementById('editHint').textContent='Changes saved in this browser';});
+resetText.addEventListener('click',()=>{if(confirm('Reset all text to the original wording?')){localStorage.removeItem(storageKey);location.reload()}});
+</script>
 </body>
 </html>
